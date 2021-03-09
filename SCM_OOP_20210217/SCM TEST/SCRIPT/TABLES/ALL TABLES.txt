@@ -1,0 +1,752 @@
+
+create table CITY (CITY_CODE char(3) not null, NAME varchar(50) null, TIME_STAMP datetime null, USER_STAMP numeric(3,0) null, PC_STAMP varchar(25) null) 
+GO
+ COMMIT
+ GO 
+alter table CITY add constraint CITY_13836729461 primary key nonclustered (CITY_CODE)   
+GO
+ COMMIT
+ GO 
+---------------------------------
+create table COMPANY (CNTRY_ID numeric(3,0) not null, COM_ID varchar(10) not null, COM_NAME varchar(100) not null, COM_TYPE numeric(2,0) null, ADDRESS varchar(100) null, CITY varchar(50) null, CONTACT1 varchar(100) null, CONTACT2 varchar(100) null, EMAIL1 varchar(100) null, WEBSITE varchar(100) null, FAX1 varchar(50) null, FAX2 varchar(50) null, TIME_STAMP datetime null, USER_STAMP numeric(3,0) null, PC_STAMP varchar(25) null)   
+GO
+ COMMIT
+ GO 
+
+alter table COMPANY add constraint P_132153215 primary key nonclustered (CNTRY_ID, COM_ID)   
+GO
+ COMMIT
+ GO 
+------------------------------
+create table COUNTRY (CNTRY_ID numeric(3,0) not null, CNTRY_NAME varchar(50) not null, ADDRESS varchar(100) null, CITY char(3) null, CONTACT1 varchar(100) null, CONTACT2 varchar(100) null, EMAIL1 varchar(100) null, WEBSITE varchar(100) null, FAX varchar(50) null, TIME_STAMP datetime null, USER_STAMP numeric(3,0) null, PC_STAMP varchar(25) null)   
+GO
+ COMMIT
+ GO 
+
+alter table COUNTRY add constraint COUNTRY_14476731741 primary key nonclustered (CNTRY_ID)   
+GO
+ COMMIT
+ GO 
+------------------------------------------------------
+
+create table DM_DRAWING (DRAWING_ID varchar(20) not null, DRAWING_FILE image null, TIME_STAMP datetime null, USER_STAMP numeric(3,0) null, PC_STAMP varchar(25) null)   
+GO
+ COMMIT
+ GO 
+
+alter table DM_DRAWING add constraint DM_DRAWING_14796732881 primary key nonclustered (DRAWING_ID)   
+GO
+ COMMIT
+ GO 
+-----------------------------------------------
+create table DM_ITEMS_DETAILS (
+FACT_ID NUMERIC(2,0) not null ,
+ORD_TYPE CHAR(4) not null, 
+ORD_ID NUMERIC(8,2) not null ,
+ORD_DATE DATETIME null,
+ITM_ID char(9) not null, 
+SER_ID NUMERIC(2,0) NOT NULL ,
+ITM_DETAIL varchar(50) not null, 
+TIME_STAMP datetime null,
+ USER_STAMP numeric(3,0) null, 
+PC_STAMP varchar(25) null)   
+
+GO
+ COMMIT
+ GO 
+
+alter table DM_ITEMS_DETAILS add constraint DM_ITEMS_DETAILS_PK primary key clustered (FACT_ID, ORD_TYPE, ORD_ID, ITM_ID, SER_ID)
+GO
+ COMMIT
+ GO 
+--------------------------------
+
+create table DM_ORDER_CALC (FACT_ID numeric(2,0) not null, ORD_ID numeric(8,2) not null, TYPE char(4) not null, ORD_DATE datetime not null, SER numeric(3,0) not null, ITM_ID char(9) not null, BALANCE numeric(13,2) null, CONS1 numeric(13,2) null, CONS2 numeric(13,2) null, CONS3 numeric(13,2) null, CONS4 numeric(13,2) null, REC_ID char(10) null, REC_DATE datetime null, PRICE numeric(13,2) null, CURRENCY numeric(2,0) null, SUP_NAME varchar(100) null, TOT_QTY_REQ numeric(13,2) null, TIME_STAMP datetime null, USER_STAMP numeric(3,0) null, PC_STAMP varchar(25) null)   
+GO
+ COMMIT
+ GO 
+
+alter table DM_ORDER_CALC add constraint DM_ORDER_C_15436735161 primary key nonclustered (FACT_ID, ORD_ID, TYPE, SER)   
+GO
+ COMMIT
+ GO 
+-------------------------------------
+
+create table DM_ORDER_FINAL (FACT_ID numeric(2,0) not null, MDEPT_ID numeric(2,0) not null, DEPT_ID numeric(3,0) not null, ORD_ID numeric(8,2) not null, ORD_DATE datetime not null, TITLE varchar(100) null, CAUSE varchar(100) null, ORD_TYPE char(4) not null, FIN_DATE datetime null, FNL_ID numeric(8,2) null, LAST_ID numeric(8,2) null, PRJCT_ID numeric(15,0) null, REQUIRED_REP varchar(100) null, MACHINE_CODE varchar(100) null, UMDEPT_ID numeric(2,0) null, UDEPT_ID numeric(3,0) null, STATE_CODE numeric(1,0) null, SER numeric(2,0) not null, ITM_ID char(9) null, ITM_GRP char(3) null, PART_NO char(12) null, NO_IN_SERVICES numeric(4,0) null, QTY numeric(13,4) null, UNIT_CODE numeric(2,0) null, BALANCE numeric(13,2) null, CONS1 numeric(13,2) null, CONS2 numeric(13,2) null, CONS3 numeric(13,2) null, CONS4 numeric(13,2) null, REC_ID varchar(10) null, REC_DATE datetime null, PRICE numeric(13,2) null, CURRENCY numeric(2,0) null, SUP_NAME varchar(100) null, DW_ID varchar(20) null, TIME_STAMP datetime null, USER_STAMP numeric(3,0) null, PC_STAMP varchar(25) null)   
+GO
+ COMMIT
+ GO 
+
+alter table DM_ORDER_FINAL add constraint ORDER_FINA_3436692411 primary key nonclustered (FACT_ID, ORD_TYPE, ORD_ID, SER)   
+GO
+ COMMIT
+ GO 
+------------------------------
+create table DM_ORDER_FINAL_H (FACT_ID numeric(2,0) not null, MDEPT_ID numeric(2,0) not null, DEPT_ID numeric(3,0) not null, ORD_ID numeric(8,2) not null, ORD_DATE datetime not null, TITLE varchar(100) null, CAUSE varchar(100) null, ORD_TYPE char(4) not null, FIN_DATE datetime null, FNL_ID numeric(8,2) null, LAST_ID numeric(8,2) null, PRJCT_ID numeric(15,0) null, REQUIRED_REP varchar(100) null, MACHINE_CODE varchar(100) null, UMDEPT_ID numeric(2,0) null, UDEPT_ID numeric(3,0) null, STATE_CODE numeric(1,0) null, SER numeric(2,0) not null, ITM_ID char(9) null, ITM_GRP char(3) null, PART_NO char(12) null, NO_IN_SERVICES numeric(4,0) null, QTY numeric(13,4) null, UNIT_CODE numeric(2,0) null, BALANCE numeric(13,2) null, CONS1 numeric(13,2) null, CONS2 numeric(13,2) null, CONS3 numeric(13,2) null, CONS4 numeric(13,2) null, REC_ID varchar(10) null, REC_DATE datetime null, PRICE numeric(13,2) null, CURRENCY numeric(3,0) null, SUP_NAME varchar(100) null, DW_ID varchar(20) null, TIME_STAMP datetime null, USER_STAMP numeric(3,0) null, PC_STAMP varchar(25) null)   
+GO
+ COMMIT
+ GO 
+
+alter table DM_ORDER_FINAL_H add constraint DM_ORDER_F_16236738011 primary key nonclustered (FACT_ID, ORD_TYPE, ORD_ID, SER)   
+GO
+ COMMIT
+ GO 
+-------------------------------------------------
+create table DM_ORDER_IC (FACT_ID numeric(2,0) not null, MDEPT_ID numeric(2,0) not null, DEPT_ID numeric(3,0) not null, ORD_ID numeric(8,2) not null, ORD_DATE datetime not null, TITLE varchar(100) not null, CAUSE varchar(100) not null, TYPE char(4) not null, FNL_DATE datetime null, FNL_ID numeric(8,2) null, LAST_ID numeric(8,2) null, PROJECT_ID numeric(15,0) null, REQUIRED_REP varchar(100) null, ASSET_GR_CODE numeric(6,0) null, MACHINE_CODE char(9) null, UMDEPT_ID numeric(2,0) null, UDEPT_ID numeric(3,0) null, STATE_CODE numeric(1,0) null, UPD_FLAG numeric(1,0) default 0 
+ null, SAVE_OK numeric(2,0) null, CALC_TYPE NUMERIC(1,0)  DEFAULT 1 ,TIMESTAMP timestamp null, TIME_STAMP datetime null, USER_STAMP numeric(3,0) null, PC_STAMP varchar(25) null, TOMDEPT numeric(2,0) null, TODEPT numeric(3,0) null, SENT_DATE datetime null, TRANS_EXE_DATE datetime null, CAR_NO varchar(10) null, ITM_ID char(9) null, SER_NO numeric(6,0) identity)   
+GO
+ COMMIT
+ GO 
+
+alter table DM_ORDER_IC add constraint DM_ORDER_I_16556739151 primary key nonclustered (FACT_ID, ORD_ID, TYPE)   
+GO
+ COMMIT
+ GO 
+------------------------------------------------
+
+create table DM_ORDER_ITEMS_IC (FACT_ID numeric(2,0) not null, ORD_ID numeric(8,2) not null, TYPE char(4) not null, ORD_DATE datetime null, SER numeric(3,0) not null, ITM_ID char(9) not null, ITM_GRP char(3) null, PART_NO char(12) null, NO_IN_SERVICE numeric(4,0) null, QTY numeric(13,4) not null, UNIT_CODE numeric(2,0) null, DRAWING_NO varchar(20) null, TIME_STAMP datetime null, USER_STAMP numeric(3,0) null, PC_STAMP varchar(25) null, SUP_QTY numeric(13,0) null, MDEPT_ID numeric(2,0) null, DEPT_ID numeric(3,0) null, NEW_ITEM_NAME varchar(100) null,SUP_DATE1 DATETIME NULL, SUP_QTY2  NUMERIC(13,0) NULL  ,SUP_DATE2 DATETIME NULL
+, SER_NO numeric(6,0) identity)   
+GO
+ COMMIT
+ GO 
+
+alter table DM_ORDER_ITEMS_IC add constraint DM_ORDER_I_17036740861 primary key nonclustered (FACT_ID, ORD_ID, TYPE, SER)   
+GO
+ COMMIT
+ GO 
+--------------------------------------
+create table DM_ORDER_STATES (FACT_ID numeric(2,0) not null, ORD_TYPE char(4) not null, ORD_ID numeric(18,0) not null, STATE_CODE numeric(2,0) not null, STATE_DATE datetime null, TIME_STAMP datetime null, USER_STAMP numeric(3,0) null, PC_STAMP varchar(25) null)   
+GO
+ COMMIT
+ GO 
+
+alter table DM_ORDER_STATES add constraint DM_ORDER_S_17356742001 primary key nonclustered (FACT_ID, ORD_TYPE, ORD_ID, STATE_CODE)   
+GO
+ COMMIT
+ GO 
+--------------------------
+
+create table DM_ORDER_TYPE (CODE char(4) not null, NAME varchar(50) null, TIME_STAMP datetime null, USER_STAMP numeric(3,0) null, PC_STAMP varchar(25) null)   
+GO
+ COMMIT
+ GO 
+
+alter table DM_ORDER_TYPE add constraint DM_ORDER_T_17676743141 primary key nonclustered (CODE)   
+GO
+ COMMIT
+ GO 
+---------------------------------------------
+
+create table DM_PROOF_RECEIPT (FACT_ID numeric(2,0) not null, REC_ID varchar(10) not null, REC_DATE datetime not null, ORD_ID numeric(8,2) null, ORD_KIND char(4) null, SER numeric(2,0) not null, ITM_ID char(9) not null, QTY_REC numeric(13,4) not null, PRICE numeric(13,4) null, TIME_STAMP datetime null, USER_STAMP numeric(3,0) null, PC_STAMP varchar(25) null, SUP_ID numeric(10,0) null, INVOICE_ID numeric(10,0) null, INVOICE_PRICE numeric(13,2) null, INVOICE_DATE datetime null)   
+GO
+ COMMIT
+ GO 
+
+alter table DM_PROOF_RECEIPT add constraint DM_PROOF_R_17996744281 primary key nonclustered (FACT_ID, REC_ID, SER)   
+GO
+ COMMIT
+ GO 
+------------------------------------------------
+
+create table DM_SER_PROFILE (FACT_ID numeric(2,0) not null, ORD_TYPE char(4) not null, START_NO numeric(3,0) null, END_NO numeric(6,0) null, START_DATE datetime null, END_DATE datetime null, TIME_STAMP datetime null, USER_STAMP numeric(3,0) null, PC_STAMP varchar(25) null)   
+GO
+ COMMIT
+ GO 
+
+alter table DM_SER_PROFILE add constraint DM_SER_PRO_18316745421 primary key nonclustered (FACT_ID, ORD_TYPE)   
+GO
+ COMMIT
+ GO 
+-------------------------------
+
+create table DM_SETTING (SET_CODE numeric(3,0) not null, SET_NAME varchar(50) not null, SET_VALUE numeric(3,0) not null, TIME_STAMP datetime null, USER_STAMP numeric(3,0) null, PC_STAMP varchar(25) null)   
+GO
+ COMMIT
+ GO 
+
+alter table DM_SETTING add constraint DM_SETTING_18636746561 primary key nonclustered (SET_CODE)   
+GO
+ COMMIT
+ GO 
+-----------------------------
+
+create table DM_STATE_TYPES (FACT_ID numeric(2,0) not null, STATE_CODE numeric(2,0) not null, STATE_DSCRP varchar(50) not null, TIME_STAMP datetime null, USER_STAMP numeric(3,0) null, PC_STAMP varchar(25) null)   
+GO
+ COMMIT
+ GO 
+
+alter table DM_STATE_TYPES add constraint DM_STATE_T_18956747701 primary key nonclustered (FACT_ID, STATE_CODE)   
+GO
+ COMMIT
+ GO 
+--------------------------------------------
+create table ITEMS_DETAILS (ITM_ID char(9) not null, ITM_DETAIL varchar(50) not null)   
+GO
+ COMMIT
+ GO 
+
+alter table ITEMS_DETAILS add constraint ITEMS_DETA_19276748841 primary key nonclustered (ITM_ID, ITM_DETAIL)   
+GO
+ COMMIT
+ GO 
+-----------------------------------
+
+create table MM_ALTERNATIVES (ITM_ID char(9) not null, ALTERNATIVE char(9) not null, TIME_STAMP datetime null, USER_STAMP numeric(3,0) null, PC_STAMP varchar(25) null)   
+GO
+ COMMIT
+ GO 
+
+alter table MM_ALTERNATIVES add constraint MM_ALTERNA_19916751121 primary key nonclustered (ITM_ID, ALTERNATIVE)   
+GO
+ COMMIT
+ GO 
+------------------------------------
+
+create table MM_DEPT_CONS (FACT_ID numeric(2,0) not null, MDEPT_ID numeric(2,0) not null, DEPT_ID numeric(3,0) not null, CON_DATE datetime not null, ITM_ID char(9) not null, SER numeric(2,0) not null, QUANTITY decimal(13,4) null, UMDEPT_ID numeric(2,0) null, UDEPT_ID numeric(3,0) null, PLACE_USED varchar(35) null, USAGE_CODE numeric(1,0) not null, TP_PRJCT numeric(1,0) null, COST_CENTER numeric(5,0) null, TP_CONS numeric(1,0) null, PRJCT_ID numeric(15,0) null, TIME_STAMP datetime null, USER_STAMP numeric(3,0) null, PC_STAMP varchar(25) null)   
+GO
+ COMMIT
+ GO 
+
+alter table MM_DEPT_CONS add constraint MM_DEPT_CO_20236752261 primary key nonclustered (FACT_ID, CON_DATE, ITM_ID, SER)   
+GO
+ COMMIT
+ GO 
+------------------------------
+
+create table MM_DEPT_GROUPS (FACT_ID numeric(2,0) not null, MDEPT_ID numeric(2,0) not null, DEPT_ID numeric(3,0) not null, GR_CODE char(2) not null, ALLOW numeric(2,0) null, TIME_STAMP datetime null, USER_STAMP numeric(3,0) null, PC_STAMP varchar(25) null)   
+GO
+ COMMIT
+ GO 
+
+alter table MM_DEPT_GROUPS add constraint MM_DEPT_GR_20556753401 primary key nonclustered (FACT_ID, MDEPT_ID, DEPT_ID)   
+GO
+ COMMIT
+ GO 
+--------------------------------------
+
+create table MM_DEPT_ITMS (FACT_ID numeric(2,0) not null, MDEPT_ID numeric(2,0) not null, DEPT_ID numeric(3,0) not null, ITM_ID char(9) not null, TIME_STAMP datetime null, USER_STAMP numeric(3,0) null, PC_STAMP varchar(25) null)   
+GO
+ COMMIT
+ GO 
+
+alter table MM_DEPT_ITMS add constraint MM_DEPT_IT_20876754541 primary key nonclustered (FACT_ID, MDEPT_ID, DEPT_ID, ITM_ID)   
+GO
+ COMMIT
+ GO 
+--------------------------------
+create table MM_MC_DEPT_QTY (FACT_ID numeric(2,0) not null, MDEPT_ID numeric(2,0) not null, DEPT_ID numeric(3,0) not null, ITM_ID char(9) not null, QTY_REQ decimal(13,4) null, QTY_OFFERED decimal(13,4) null, QTY_CONS decimal(13,4) null, QTY_REMAIN decimal(13,4) null, TRAN_DATE datetime null, RATE numeric(3,0) null, TIME_STAMP datetime null, USER_STAMP numeric(3,0) null, PC_STAMP varchar(25) null)   
+GO
+ COMMIT
+ GO 
+
+alter table MM_MC_DEPT_QTY add constraint MM_MC_DEPT_21196755681 primary key nonclustered (FACT_ID, MDEPT_ID, DEPT_ID, ITM_ID)   
+GO
+ COMMIT
+ GO 
+-------------------------------
+
+create table PM_ORDER (FACT_ID numeric(2,0) not null, MDEPT_ID numeric(2,0) not null, DEPT_ID numeric(3,0) not null, ORD_ID numeric(8,2) not null, ORD_DATE datetime not null, TITLE varchar(100) not null, CAUSE varchar(100) not null, TYPE char(4) not null, FNL_DATE datetime null, FNL_ID numeric(8,2) null, LAST_ID numeric(8,2) null, PROJECT_ID numeric(15,0) null, REQUIRED_REP varchar(100) null, ASSET_GR_CODE numeric(6,0) null, MACHINE_CODE char(9) null, UMDEPT_ID numeric(2,0) null, UDEPT_ID numeric(3,0) null, STATE_CODE numeric(1,0) null, UPD_FLAG numeric(1,0) default 0 
+ not null, TRANS_DATE datetime  not null, TIME_STAMP datetime null, USER_STAMP numeric(3,0) null, PC_STAMP varchar(25) null)   
+GO
+ COMMIT
+ GO 
+
+alter table PM_ORDER add constraint PM_ORDER_681922621 primary key nonclustered (FACT_ID, ORD_ID, TYPE)   
+GO
+ COMMIT
+ GO 
+-------------------------------
+create table PM_ORDER_ITEMS (FACT_ID numeric(2,0) not null, ORD_ID numeric(8,2) not null, TYPE char(4) not null, ORD_DATE datetime null, SER numeric(3,0) not null, ITM_ID char(9) not null, ITM_GRP char(3) null, PART_NO char(12) null, NO_IN_SERVICE numeric(4,0) null, QTY numeric(13,4) not null, DRAWING_NO varchar(20) null, UNIT_CODE numeric(2,0) null, TIME_STAMP datetime null, USER_STAMP numeric(3,0) null, PC_STAMP varchar(25) null)   
+GO
+ COMMIT
+ GO 
+
+alter table PM_ORDER_ITEMS add constraint PM_ORDER_I_1321924901 primary key nonclustered (FACT_ID, ORD_ID, TYPE, SER)   
+GO
+ COMMIT
+ GO 
+--------------------------------
+
+create table PM_ORDER_ITEMS_CALC (FACT_ID numeric(2,0) not null, ORD_ID numeric(8,2) not null, TYPE char(4) not null, ORD_DATE datetime not null, SER numeric(3,0) not null, ITM_ID char(9) not null, BALANCE numeric(13,2) null, CONS1 numeric(13,2) null, CONS2 numeric(13,2) null, CONS3 numeric(13,2) null, CONS4 numeric(13,2) null, REC_ID char(10) null, REC_DATE datetime null, PRICE numeric(13,2) null, CURRENCY numeric(2,0) null, SUP_NAME varchar(100) null, TOT_QTY_REQ numeric(13,2) null, TIME_STAMP datetime null, USER_STAMP numeric(3,0) null, PC_STAMP varchar(25) null)   
+GO
+ COMMIT
+ GO 
+
+alter table PM_ORDER_ITEMS_CALC add constraint PM_ORDER_C_13266247381 primary key nonclustered (FACT_ID, ORD_ID, TYPE, SER)   
+GO
+ COMMIT
+ GO 
+--------------------------------------------
+create table PM_ORDER_ITEMS_OFFERS (FACT_ID numeric(2,0) not null, ORD_TYPE char(4) not null, ORD_ID numeric(8,0) not null, ORD_DATE datetime not null, ITM_ID char(9) not null, ORD_SER numeric(3,0) not null, OFFER_SER numeric(2,0) not null, QTY_REQ numeric(13,2) null, SUP_ID numeric(10,0) null, SUP_VALUE numeric(15,2) null, TOTAL_VALUE numeric(15,2) null, TRAN_DATE datetime null, TECH_FLAG numeric(1,0) null, UNIT_ID numeric(2,0) null, FLAG numeric(1,0) null, CUR_ID numeric(3,0) null, TIME_STAMP datetime null, USER_STAMP numeric(3,0) null, PC_STAMP varchar(25) null)   
+GO
+ COMMIT
+ GO 
+
+alter table PM_ORDER_ITEMS_OFFERS add constraint PM_ORDER_I_2121927751 primary key nonclustered (FACT_ID, ORD_TYPE, ORD_ID, ITM_ID, ORD_SER, OFFER_SER)   
+GO
+ COMMIT
+ GO 
+---------------------------
+
+create table PM_ORDER_ITEMS_OFFERS_2 (FACT_ID numeric(2,0) not null, ORD_TYPE char(4) not null, ORD_ID numeric(8,0) not null, ORD_DATE datetime not null, ITM_ID char(9) not null, ORD_SER numeric(3,0) not null, QTY_REQ numeric(13,2) null, SUP_ID1 numeric(10,0) null, SUP_VALUE1 numeric(15,2) null, TOTAL_VALUE1 numeric(15,2) null, TECH_FLAG1 numeric(1,0) null, SUP_ID2 numeric(10,0) null, SUP_VALUE2 numeric(15,2) null, TOTAL_VALUE2 numeric(15,2) null, TECH_FLAG2 numeric(1,0) null, SUP_ID3 numeric(10,0) null, SUP_VALUE3 numeric(15,2) null, TOTAL_VALUE3 numeric(15,2) null, TECH_FLAG3 numeric(1,0) null, SUP_ID4 numeric(10,0) null, SUP_VALUE4 numeric(15,2) null, TOTAL_VALUE4 numeric(15,2) null, TECH_FLAG4 numeric(1,0) null, SUP_ID5 numeric(10,0) null, SUP_VALUE5 numeric(15,2) null, TOTAL_VALUE5 numeric(15,2) null, TECH_FLAG5 numeric(1,0) null, TRAN_DATE datetime not null, UNIT_ID numeric(2,0) null, CUR_ID numeric(3,0) null, TIME_STAMP datetime null, USER_STAMP numeric(3,0) null, PC_STAMP varchar(25) null)   
+GO
+ COMMIT
+ GO 
+
+alter table PM_ORDER_ITEMS_OFFERS_2 add constraint PK_123456789 primary key nonclustered (FACT_ID, ORD_TYPE, ORD_ID, ORD_SER)   
+GO
+ COMMIT
+ GO 
+---------------------------------------------
+
+create table PRCH_OFFERS (FACT_ID numeric(2,0) not null, TYPE char(4) not null, LPO_ID numeric(8,2) not null, ITM_ID char(9) not null, OFFER_ID numeric(5,0) not null, OFFER_DATE datetime null, SUP_ID numeric(10,0) null, NOTES_DATE datetime null, NOTES_ID numeric(4,0) not null, PRICE numeric(13,4) not null, QTY_OFFER decimal(13,4) not null, TOTAL_PRICE decimal(13,4) not null, UNIT numeric(2,0) not null, PERIOD_DAYS numeric(4,0) not null, TIME_STAMP datetime null, USER_STAMP numeric(3,0) null, PC_STAMP varchar(25) null)   
+GO
+ COMMIT
+ GO 
+
+alter table PRCH_OFFERS add constraint PRCH_OFFER_2761930031 primary key nonclustered (OFFER_ID, ITM_ID)   
+GO
+ COMMIT
+ GO 
+----------------------------
+
+create table SCM__ACCOUNT_CENTER_C (CENTER_CODE numeric(5,0) not null, DSCRPT varchar(40) not null, TIME_STAMP datetime null, USER_STAMP smallint null)   
+GO
+ COMMIT
+ GO 
+-------------------------------
+create table SCM_ACTIONS (FACT_ID numeric(2,0) not null, PC_NAME varchar(25) null, WIN_NAME varchar(50) null, ACTION varchar(50) null, USER_ID numeric(2,0) null, TIME_STAME datetime not null, SER numeric(6,0) identity)   
+GO
+ COMMIT
+ GO 
+
+alter table SCM_ACTIONS add constraint PC_ACCCC primary key nonclustered (FACT_ID, SER)   
+GO
+ COMMIT
+ GO 
+-------------------------------
+
+create table SCM_ACTIONS_H (FACT_ID numeric(2,0) not null, PC_NAME varchar(25) null, WIN_NAME varchar(50) null, ACTION varchar(50) null, USER_ID numeric(2,0) null, TIME_STAME datetime not null, SER numeric(13,0) not null)   
+GO
+ COMMIT
+ GO 
+
+alter table SCM_ACTIONS_H add constraint SCM_ACTION_11561961381 primary key nonclustered (FACT_ID, SER, TIME_STAME)   
+GO
+ COMMIT
+ GO 
+-------------------------------------------
+create table SCM_COMPLAINT (FACT_ID char(2) not null, USER_ID char(2) not null, C_DATE datetime not null, C_TYPE numeric(2,0) not null, COMPLAINT varchar(500) not null, MOBILE varchar(11) not null)   
+GO
+ COMMIT
+ GO 
+
+alter table SCM_COMPLAINT add constraint SCM_COMPLA_10580997791 primary key nonclustered (USER_ID, COMPLAINT)   
+GO
+ COMMIT
+ GO 
+-----------------------------------------------
+create table SCM_CURRENCY (FACT_ID numeric(2,0) not null, C_ID numeric(3,0) not null, C_NAME varchar(50) not null, CONV_VALUE numeric(13,2) null, TIME_STAMP datetime null, USER_STAMP numeric(3,0) null, PC_STAMP varchar(25) null)   
+GO
+ COMMIT
+ GO 
+
+alter table SCM_CURRENCY add constraint SCM_CURREN_4361935731 primary key nonclustered (FACT_ID, C_ID)   
+GO
+ COMMIT
+ GO 
+---------------------------------
+create table SCM_DEPT_MASTER (FACT_ID numeric(2,0) not null, MDEPT_ID numeric(2,0) not null, DEPT_ID numeric(3,0) not null, ITM_ID char(9) not null, DEMAND_DATE datetime not null, CONS_DATE datetime not null, TIME_STAMP datetime null, USER_STAMP numeric(3,0) null, PC_STAMP varchar(25) null)   
+GO
+ COMMIT
+ GO 
+
+alter table SCM_DEPT_MASTER add constraint SCM_DEPT_M_5001938011 primary key nonclustered (FACT_ID, DEPT_ID, DEMAND_DATE)   
+GO
+ COMMIT
+ GO 
+-------------------------------------------------
+create table SCM_DEPTS_COST_C (FACT_ID numeric(2,0) not null, MDEPT_ID numeric(2,0) not null, DEPT_ID numeric(3,0) null, COST_ID numeric(5,0) not null)   
+GO
+ COMMIT
+ GO 
+
+alter table SCM_DEPTS_COST_C add constraint SCM_DEPTS__4681936871 primary key nonclustered (FACT_ID, MDEPT_ID, COST_ID)   
+GO
+ COMMIT
+ GO 
+------------------------------------------------------
+create table SCM_EMPLOYEE (EMP_ID char(8) not null, EMP_NAME varchar(60) not null)   
+GO
+ COMMIT
+ GO 
+
+alter table SCM_EMPLOYEE add constraint PK_SCM_EMPLOYEE_M primary key nonclustered (EMP_ID)   
+GO
+ COMMIT
+ GO 
+
+create table SCM_FACT (COM_ID varchar(10) not null, FACT_ID numeric(2,0) not null, FACT_DESCRIP varchar(50) not null, SEASON numeric(4,0) not null, DEF numeric(2,0) null, PRCH_VALUE numeric(15,0) default 0 
+ not null, ADDRESS varchar(100) null, CITY varchar(50) null, CONTACT1 varchar(100) null, CONTACT2 varchar(100) null, EMAIL1 varchar(100) null, WEBSITE varchar(100) null, FAX1 varchar(50) null, FAX2 varchar(50) null, TIME_STAMP datetime null, USER_STAMP numeric(3,0) null, PC_STAMP varchar(25) null)   
+GO
+ COMMIT
+ GO 
+
+alter table SCM_FACT add constraint SCM_FACT_5801940861 primary key nonclustered (FACT_ID)   
+GO
+ COMMIT
+ GO 
+-----------------------------------------------
+
+create table SCM_FACT_DEPT (FACT_ID numeric(2,0) not null, MDEPT_ID numeric(2,0) not null, DEPT_ID numeric(3,0) not null, DEPT_NAME varchar(50) null, SUPERVISOR varchar(50) null, TIME_STAMP datetime null, USER_STAMP numeric(3,0) null, PC_STAMP varchar(25) null, COST_ID char(8) null)   
+GO
+ COMMIT
+ GO 
+
+alter table SCM_FACT_DEPT add constraint SCM_FACT_D_6281942571 primary key nonclustered (FACT_ID, MDEPT_ID, DEPT_ID)   
+GO
+ COMMIT
+ GO 
+--------------------------------
+
+create table SCM_FACTS_BALANCE (FACT_ID numeric(2,0) not null, STOR_ID char(12) not null, ITM_ID char(9) not null, BAL_QTY numeric(13,2) null, BAL_VAL numeric(13,2) null, BAL_DATE datetime not null, RES_QTY numeric(13,2) null, RES_VAL numeric(13,2) null)   
+GO
+ COMMIT
+ GO 
+
+alter table SCM_FACTS_BALANCE add constraint SCM_FACTS__11047199571 primary key nonclustered (FACT_ID, STOR_ID, ITM_ID)   
+----------------------------
+
+create table SCM_IMPORTER (IMP_NO decimal(10,0) not null, IMP_NAME char(50) null, tax_org_no char(3) null, IMP_CONTACT VARCHAR(50) null, TAX_ID_NO char(50) null, TAX_FILE_NO char(50) null, IMP_ADDRESS char(60) null)   
+GO
+ COMMIT
+ GO 
+
+alter table SCM_IMPORTER add constraint F_IMPORTER_M_x primary key nonclustered (IMP_NO)   
+GO
+ COMMIT
+ GO 
+-------------------------
+
+create table SCM_INCOMING_NOTES (FACT_ID numeric(2,0) not null, MDEPT_ID numeric(2,0) null, DEPT_ID numeric(3,0) null, NOTES_ID numeric(8,0) not null, NOTES_DATE datetime null, ANCON numeric(4,0) null, F_FACT numeric(2,0) null, F_MDEPT numeric(2,0) null, E_FACT numeric(2,0) null, E_MDEPT numeric(2,0) null, CONTENT varchar(1000) null, SAVE_FLAG numeric(2,0) null, SAVE_CODE numeric(4,0) null, TRAN_DATE datetime null, TP_IN_OUT numeric(1,0) not null, ORD_TYPE char(4) null, ORD_ID numeric(8,2) null, DOC_DATE datetime null, F_DEPT numeric(3,0) null, E_DEPT numeric(3,0) null, TIME_STAMP datetime null, USER_STAMP numeric(3,0) null, PC_STAMP varchar(25) null)   
+GO
+ COMMIT
+ GO 
+
+alter table SCM_INCOMING_NOTES add constraint SCM_INCOMI_7401946561 primary key nonclustered (FACT_ID, NOTES_ID, TP_IN_OUT)   
+GO
+ COMMIT
+ GO 
+-------------------------
+
+create table SCM_ITEMS_MASTER (ITM_ID char(9) not null, CONSUMPTION numeric(13,2) null, START_YEAR numeric(4,0) null, END_YEAR numeric(4,0) null, REORDER_QTY numeric(13,2) null, SAFTY_QTY numeric(13,2) null, ECONOMIC_QTY numeric(13,2) null, LEAD_TIME numeric(4,0) null, TIME_STAMP datetime null, USER_STAMP numeric(3,0) null, PC_STAMP varchar(25) null)   
+GO
+ COMMIT
+ GO 
+
+alter table SCM_ITEMS_MASTER add constraint SCM_ITEMS__7721947701 primary key nonclustered (ITM_ID)   
+GO
+ COMMIT
+ GO 
+------------------------
+
+create table SCM_MAIN_DEPT (FACT_ID numeric(2,0) not null, MDEPT_ID numeric(2,0) not null, MDEPT_NAME varchar(50) not null, MANAGER varchar(50) null, PRCH_VALUE numeric(13,2) default 0.00 
+ not null, TIME_STAMP datetime null, USER_STAMP numeric(3,0) null, PC_STAMP varchar(25) null)   
+GO
+ COMMIT
+ GO 
+
+alter table SCM_MAIN_DEPT add constraint SCM_MAIN_D_8041948841 primary key nonclustered (FACT_ID, MDEPT_ID)   
+GO
+ COMMIT
+ GO 
+-----------------------
+
+create table SCM_MCHN_CARS (FACT_ID numeric(2,0) not null, CAR_ID char(10) not null, CAR_DES varchar(50) null)   
+GO
+ COMMIT
+ GO 
+
+alter table SCM_MCHN_CARS add constraint SCM_MCHN_C_8521950551 primary key nonclustered (FACT_ID, CAR_ID)   
+GO
+ COMMIT
+ GO 
+---------------------------------------
+create table SCM_MESSAGE_CODE (FACT_ID numeric(2,0) not null, MESSAGE_ID numeric(2,0) not null, MESSAGE_DES varchar(20) not null, TIME_STAMP datetime null, USER_STAMP numeric(3,0) null, PC_STAMP varchar(25) null)   
+GO
+ COMMIT
+ GO 
+
+alter table SCM_MESSAGE_CODE add constraint SCM_MESSAG_8841951691 primary key nonclustered (FACT_ID, MESSAGE_ID)   
+GO
+ COMMIT
+ GO 
+--------------------------------------
+
+create table SCM_MOWAZNA (COM_ID varchar(10) not null, FACT_ID numeric(3,0) not null, FISCAL_START_YEAR numeric(4,0) not null, FISCAL_END_YEAR numeric(4,0) not null, PRCH_VAL numeric(15,0) default 0 
+ not null, ALLOW_PERCENT numeric(4,2) default 0 
+ not null, TIME_STAMP datetime null, USER_STAMP numeric(3,0) null, PC_STAMP varchar(25) null)   
+GO
+ COMMIT
+ GO 
+
+alter table SCM_MOWAZNA add constraint SCM_MOWAZN_9161952831 primary key nonclustered (COM_ID, FACT_ID)   
+GO
+ COMMIT
+ GO 
+----------------------------------
+create table SCM_MOWZNA_ITEMS (FACT_ID numeric(2,0) not null, START_YEAR numeric(4,0) not null, END_YEAR numeric(4,0) null, ITM_ID char(9) not null, CONS_RATE numeric(10,5) null, CONS_AMOUNT numeric(10,5) null, LAST_YEAR_PRICE numeric(13,2) null, LAST_YEAR_AMOUNT numeric(13,2) null, ESTIMATED_VALUE numeric(13,2) null, CANE_TON numeric(13,0) null, FLAG numeric(1,0) null, TIME_STAMP datetime null, USER_STAMP numeric(3,0) null, PC_STAMP varchar(25) null)   
+GO
+ COMMIT
+ GO 
+
+alter table SCM_MOWZNA_ITEMS add constraint SCM_MOWZNA_9801955111 primary key nonclustered (FACT_ID, START_YEAR, ITM_ID)   
+GO
+ COMMIT
+ GO 
+---------------------------------
+
+create table SCM_OFFERS (FACT_ID numeric(2,0) not null, MDEPT_ID numeric(2,0) not null, DEPT_ID numeric(3,0) not null, OFFER_ID numeric(4,0) not null, DATE_OFFER datetime null, NOTES_DATE datetime null, NOTES_ID numeric(4,0) not null, SUP_ID numeric(10,0) not null, SANF_ID char(9) not null, QTY_OFFER decimal(13,4) not null, TOTAL_PRICE decimal(13,4) not null, PRICE decimal(13,4) not null, UNIT numeric(2,0) not null, PERIOD_DAYS numeric(4,0) not null, TIME_STAMP datetime null, USER_STAMP numeric(3,0) null, PC_STAMP varchar(25) null)   
+GO
+ COMMIT
+ GO 
+
+alter table SCM_OFFERS add constraint SCM_OFFERS_10121956251 primary key nonclustered (OFFER_ID, SANF_ID)   
+GO
+ COMMIT
+ GO 
+----------------------------------
+
+create table SCM_PM_SO (FACT_ID numeric(2,0) not null, SO_ID numeric(8,0) not null, SO_DATE datetime not null, SUPP_ID numeric(10,0) not null, TIME_STAMP datetime null, USER_STAMP numeric(3,0) null, PC_STAMP varchar(25) null)   
+GO
+ COMMIT
+ GO 
+
+alter table SCM_PM_SO add constraint SCM_PM_SO_10441957391 primary key nonclustered (FACT_ID, SO_ID, SO_DATE)   
+GO
+ COMMIT
+ GO 
+--------------------------------------
+create table SCM_PROJECTS (FACT_ID numeric(2,0) not null, MDEPT_ID numeric(2,0) not null, DEPT_ID numeric(3,0) not null, PRJ_ID numeric(15,0) not null, DAY_DATE datetime null, PRJ_NAME varchar(100) null, FINAN_ID numeric(4,0) null, FINAN_QTY numeric(10,2) null, PRJ_DATE datetime null, PRJ_DEPT numeric(2,0) null, PRJ_PLACE varchar(100) null, TIME_STAMP datetime null, USER_STAMP numeric(3,0) null, PC_STAMP varchar(25) null, ACC_NO char(11) null)   
+GO
+ COMMIT
+ GO 
+
+alter table SCM_PROJECTS add constraint SCM_PROJEC_15346254791 primary key nonclustered (FACT_ID, PRJ_ID)   
+GO
+ COMMIT
+ GO 
+---------------------------------
+
+create table SCM_RJCT_CODES (FACT_ID numeric(2,0) not null, RJCT_CODE numeric(2,0) not null, RJCT_DESC varchar(50) null)   
+GO
+ COMMIT
+ GO 
+
+alter table SCM_RJCT_CODES add constraint SCM_RJCT_C_11241960241 primary key nonclustered (FACT_ID, RJCT_CODE)   
+GO
+ COMMIT
+ GO 
+------------------------------
+create table SCM_SAVE_FILES (FACT_ID numeric(2,0) not null, FILE_ID numeric(4,0) not null, TITLE varchar(100) not null, TIME_STAMP datetime null, USER_STAMP numeric(3,0) null, PC_STAMP varchar(25) null)   
+GO
+ COMMIT
+ GO 
+
+alter table SCM_SAVE_FILES add constraint SCM_SAVE_F_11561961381 primary key nonclustered (FACT_ID, FILE_ID)   
+GO
+ COMMIT
+ GO 
+-----------------------------
+
+create table SCM_SECURITY_ITMS (FACT_ID numeric(2,0) not null, TRAN_DATE datetime not null, SER_NO numeric(8,0) not null, ITEM_ID char(9) not null, E_QTY numeric(13,2) not null, UNIT_ID numeric(2,0) null, IMPORT_ID numeric(10,0) null, INVOICE_ID char(10) null, EMP_ID char(9) null, ENTRY_TIME time null, CAR_NO char(9) null, TIME_STAMP datetime null, USER_STAMP numeric(3,0) null, PC_STAMP varchar(25) null, ENTRY_DATE date null, ORDER_TYPE char(4) null, ORD_ID numeric(8,2) null)   
+GO
+ COMMIT
+ GO 
+
+alter table SCM_SECURITY_ITMS add constraint SCM_SECURI_11881962521 primary key nonclustered (FACT_ID, TRAN_DATE, SER_NO)   
+GO
+ COMMIT
+ GO 
+
+---------------------------------
+
+create table SCM_SENDING_DEPTS (F_FACT_ID numeric(2,0) not null, F_MDEPT_ID numeric(2,0) not null, F_DEPT_ID numeric(3,0) not null, T_FACT_ID numeric(2,0) not null, T_MDEPT_ID numeric(2,0) not null, T_DEPT_ID numeric(3,0) not null)   
+GO
+ COMMIT
+ GO 
+
+alter table SCM_SENDING_DEPTS add constraint SCM_SENDIN_12201963661 primary key nonclustered (F_FACT_ID, F_MDEPT_ID, F_DEPT_ID)   
+GO
+ COMMIT
+ GO 
+------------------------------------
+
+create table SCM_SO_TERMS (FACT_ID numeric(2,0) not null, TERM_ID numeric(2,0) not null, TERM_TEXT varchar(100) not null, TERM_DATE datetime not null, SO_ID numeric(8,0) not null, SO_DATE datetime not null, TIME_STAMP datetime null, USER_STAMP numeric(3,0) null, PC_STAMP varchar(25) null)   
+GO
+ COMMIT
+ GO 
+
+alter table SCM_SO_TERMS add constraint SCM_SO_TER_12521964801 primary key nonclustered (FACT_ID, TERM_ID, SO_ID)   
+GO
+ COMMIT
+ GO 
+----------------------------------
+
+create table SCM_SUPPLIERS (FACT_ID numeric(2,0) not null, SUP_ID numeric(10,0) not null, SUP_NAME varchar(100) not null, SANF_ID char(9) null, GORUD_ID char(4) null, PRICE decimal(13,4) null, UNIT numeric(2,0) null, SUP_ADDRESS varchar(100) null, FAX varchar(35) null, PHONE varchar(100) null, EMAIL varchar(100) null, MOBILE varchar(100) null, SHOPPING_METHOD char(2) not null, TIME_STAMP datetime null, USER_STAMP numeric(3,0) null, PC_STAMP varchar(25) null)   
+GO
+ COMMIT
+ GO 
+
+alter table SCM_SUPPLIERS add constraint SCM_SUPPLI_12841965941 primary key nonclustered (SUP_ID)   
+GO
+ COMMIT
+ GO 
+-------------------------------
+
+create table SCM_SYSTEM_TABLE (FACT_CODE numeric(2,0) not null, COMPANY_NAME varchar(50) null, DEPT_NAME varchar(50) null, SYSTEM_NAME varchar(50) null, SESON_CODE_1 numeric(4,0) null, SESON_CODE_2 numeric(4,0) null, SYSTEM_KIND numeric(1,0) null, DB_NAME varchar(20) null, DB_ID numeric(2,0) null, DB_USER_NAME varchar(20) null, DB_USER_PASS varchar(20) null, MAX_USER_NO numeric(2,0) null, APP_SUPER_USER_ID numeric(4,0) null, APP_SUPER_USER_CODE numeric(6,0) null, FACT_SESON_START datetime null, FACT_SESON_END datetime null, FINANCIAL_YEAR_START datetime null, FINANCIAL_YEAR_END datetime null, TIME_STAMP datetime null, USER_STAMP numeric(3,0) null, PC_STAMP varchar(25) null)   
+GO
+ COMMIT
+ GO 
+
+alter table SCM_SYSTEM_TABLE add constraint SCM_SYSTEM_13161967081 primary key nonclustered (FACT_CODE)   
+GO
+ COMMIT
+ GO 
+---------------------------------------
+
+create table SCM_TERMS (FACT_ID numeric(2,0) not null, TERM_ID numeric(2,0) not null, TERM_TEXT varchar(100) not null, TERM_DATE datetime not null, TIME_STAMP datetime null, USER_STAMP numeric(3,0) null, PC_STAMP varchar(25) null)   
+GO
+ COMMIT
+ GO 
+
+alter table SCM_TERMS add constraint SCM_TERMS_13481968221 primary key nonclustered (FACT_ID, TERM_ID)   
+GO
+ COMMIT
+ GO 
+------------------------------------
+create table SCM_TRANSACTIONS_CODES (FACT_ID numeric(2,0) not null, WINDOW_NAME varchar(100) not null, TRANSACTION_CODE varchar(100) not null, TIME_STAMP datetime null, USER_STAMP numeric(3,0) null, PC_STAMP varchar(25) null)   
+GO
+ COMMIT
+ GO 
+
+alter table SCM_TRANSACTIONS_CODES add constraint SCM_TRANSA_13801969361 primary key nonclustered (FACT_ID, WINDOW_NAME, TRANSACTION_CODE)   
+GO
+ COMMIT
+ GO 
+-------------------------------------------------
+create table SCM_USERS (FACT_ID decimal(2,0) not null, EMP_ID decimal(2,0) not null, ID_NAME char(50) null, EMPL_PASS char(100) not null, TRAN_CAP decimal(1,0) null, REP_CAP decimal(1,0) null, LAST_LOG decimal(1,0) null, TIME_STAMP datetime null, USER_STAMP numeric(3,0) null, PC_STAMP varchar(25) null)   
+GO
+ COMMIT
+ GO 
+
+alter table SCM_USERS add constraint SCM_USERS_x primary key nonclustered (FACT_ID, EMP_ID)   
+GO
+ COMMIT
+ GO 
+----------------------------
+
+create table SOM_DM_IC (FACT_ID numeric(2,0) not null, SOM_ID numeric(8,0) not null, SOM_TYPE char(4) not null, ORD_ID numeric(8,2) not null, ORD_TYPE char(4) not null, STATE numeric(1,0) not null, SAVE_OK numeric(2,0) null, TRAN_DATE datetime null, YEAR1 numeric(4,0) null, YEAR2 numeric(4,0) null, TIME_STAMP datetime null, USER_STAMP numeric(3,0) null, PC_STAMP varchar(25) null)   
+GO
+ COMMIT
+ GO 
+
+alter table SOM_DM_IC add constraint SOM_DM_IC_14921973351 primary key nonclustered (FACT_ID, SOM_ID, SOM_TYPE, ORD_ID, ORD_TYPE)   
+GO
+ COMMIT
+ GO 
+-------------------------
+
+create table SOM_IC (FACT_ID numeric(2,0) not null, SOM_ID numeric(8,0) not null, SOM_TYPE char(4) not null, SOM_DATE datetime not null, MDEPT_ID numeric(2,0) null, DEPT_ID numeric(3,0) null, TITLE varchar(100) null, SOM_PRICE numeric(13,2) null, SOM_TAX numeric(13,2) null, CRNCY_CODE numeric(1,0) null, SOM_MONAKSA varchar(50) null, NOTES_ID numeric(8,0) null, NOTES_DATE datetime null, INSUR_STAT numeric(1,0) null, SUPPLIER_ID numeric(10,0) null, SOM_STAT numeric(1,0) null, SAVE_OK numeric(2,0) null, YEAR1 numeric(4,0) null, YEAR2 numeric(4,0) null, TIME_STAMP datetime null, USER_STAMP numeric(3,0) null, PC_STAMP varchar(25) null, ARRIVE_PERIOD numeric(6,0) null, ARRIVAL_DATE datetime null, TIME_UNIT numeric(2,0) null, ORD_TYPE char(4) not null, ORD_ID numeric(8,2) not null)   
+GO
+ COMMIT
+ GO 
+
+alter table SOM_IC add constraint SOM_IC_14066250231 primary key nonclustered (FACT_ID, SOM_ID, SOM_TYPE, SOM_DATE,ORD_TYPE,ORD_ID)   
+GO
+ COMMIT
+ GO 
+---------------------------------------
+
+create table SOM_ITEMS_IC (FACT_ID numeric(2,0) not null, SOM_ID numeric(8,0) not null, SOM_TYPE char(4) not null,SOM_DATE DATETIME NOT NULL, SER numeric(2,0) not null, ITM_CODE char(9) null, SQTY numeric(13,2) null, SUNIT_CODE numeric(2,0) null, SAVE_OK numeric(2,0) null, YEAR1 numeric(4,0) null, YEAR2 numeric(4,0) null, TIME_STAMP datetime null, USER_STAMP numeric(3,0) null, PC_STAMP varchar(25) null, REC_QTY numeric(13,2) null)   
+GO
+ COMMIT
+ GO 
+
+alter table SOM_ITEMS_IC add constraint SOM_ITEMS__15721976201 primary key nonclustered (FACT_ID, SOM_ID, SOM_TYPE, SER,SOM_DATE)   
+GO
+ COMMIT
+ GO 
+----------------------------------------------------------
+create table SOM_STATE_TYPES (FACT_ID numeric(2,0) not null, STATE_CODE numeric(2,0) not null, STATE_DESCRIPTION varchar(50) null, TIME_STAMP datetime null, USER_STAMP numeric(3,0) null, PC_STAMP varchar(25) null)   
+GO
+ COMMIT
+ GO 
+
+alter table SOM_STATE_TYPES add constraint SOM_STATE__16361978481 primary key nonclustered (FACT_ID, STATE_CODE)   
+GO
+ COMMIT
+ GO 
+---------------------------------------------
+
+create table SOM_STATES (FACT_ID numeric(2,0) not null, SOM_TYPE char(4) not null, SOM_ID numeric(8,0) not null, STATE_CODE numeric(1,0) not null, STATE_DATE datetime not null, TIME_STAMP datetime null, USER_STAMP numeric(3,0) null, PC_STAMP varchar(25) null)   
+GO
+ COMMIT
+ GO 
+
+alter table SOM_STATES add constraint SOM_STATES_16041977341 primary key nonclustered (FACT_ID, SOM_TYPE, SOM_ID, STATE_CODE, STATE_DATE)   
+GO
+ COMMIT
+ GO 
+---------------------------------
+create table SOM_TYPES (FACT_ID numeric(2,0) not null, SOM_TYPE char(4) not null, TYPE_DESCRIPTION varchar(50) not null, SAVE_OK numeric(2,0) null, TIME_STAMP datetime null, USER_STAMP numeric(3,0) null, PC_STAMP varchar(25) null)   
+GO
+ COMMIT
+ GO 
+
+alter table SOM_TYPES add constraint SOM_TYPES_16681979621 primary key nonclustered (FACT_ID, SOM_TYPE)   
+GO
+ COMMIT
+ GO 
+--------------------------------------------------
+create table STKS_ITM (ITM_ID char(9) not null, BALANCE numeric(13,0) null, ITM_E_NM varchar(50) null)   
+GO
+ COMMIT
+ GO 
+
+alter table STKS_ITM add constraint P_STKS_Pk primary key nonclustered (ITM_ID)   
+GO
+ COMMIT
+ GO 
+----------------------------------------------
+create table STKS_ITM_HISTORY (FACT_ID numeric(2,0) not null, TRAN_DATE datetime not null, TRAN_CODE numeric(2,0) not null, PAGE_ID int not null, SER numeric(3,0) not null, ITM_ID char(9) not null, ITM_QTY numeric(13,0) not null, REC_NO numeric(8,0) null, REC_DATE datetime null, ORD_TYPE char(4) null, ORD_ID numeric(8,2) null, MDEPT_ID numeric(2,0) null, DEPT_ID numeric(3,0) null, STOR_NO char(12) not null, COST_ID char(8) null, ITM_VAL decimal(13,2) null, SOM_KIND char(4) null, SOM_ID numeric(8,2) null, SOM_DATE datetime null, SUP_ID numeric(8,0) null, TIME_STAMP datetime null, USER_STAMP numeric(3,0) null, PC_STAMP varchar(25) null, UPDATE_FLAG numeric(2,0) null, COUNTER numeric(15,0) null)   
+GO
+ COMMIT
+ GO 
+----------------------------------
+create table STKS_ITM_TRAN (FACT_ID numeric(2,0) not null, TRAN_DATE datetime not null, TRAN_CODE numeric(2,0) not null, PAGE_ID int not null, SER numeric(3,0) not null, ITM_ID char(9) not null, ITM_QTY numeric(13,0) not null, REC_NO numeric(8,0) null, REC_DATE datetime null, ORD_TYPE char(4) null, ORD_ID numeric(8,2) null, MDEPT_ID numeric(2,0) null, DEPT_ID numeric(3,0) null, STOR_NO char(12) not null, COST_ID char(8) null, ITM_VAL decimal(13,2) null, SOM_KIND char(4) null, SOM_ID numeric(8,2) null, SOM_DATE datetime null, SUP_ID numeric(8,0) null, TIME_STAMP datetime null, USER_STAMP numeric(3,0) null, PC_STAMP varchar(25) null, UPDATE_FLAG numeric(2,0) null)   
+GO
+ COMMIT
+ GO 
+
+alter table STKS_ITM_TRAN add constraint STKS_ITM_T_10407197291 primary key nonclustered (FACT_ID, TRAN_DATE, TRAN_CODE, SER, PAGE_ID)   
+GO
+ COMMIT
+ GO 
+----------------------------------
+
+create table STKS_MASTER (FACT_ID numeric(2,0) not null, STR_ID char(12) not null, ITM_ID char(9) not null, F_BAL_QTY numeric(13,2) null, F_BAL_VAL numeric(13,2) null, SUP_QTY numeric(13,2) null, SUP_VAL numeric(13,2) null, ISSUED_QTY numeric(13,2) null, ISSUED_VAL numeric(13,2) null, RED_SUP_QTY numeric(13,2) null, RED_SUP_VAL numeric(13,2) null, RED_ISSUED_QTY numeric(13,2) null, RED_ISSUED_VAL numeric(13,2) null, AVG_COST numeric(15,2) null, NET_QTY numeric(13,2) null, NET_VAL numeric(13,2) null, TIME_STAMP datetime null, USER_STAMP numeric(3,0) null, PC_STAMP varchar(25) null, ITM_MIN numeric(13,2) null, ITM_EDG numeric(13,2) null, LAST_IN_DATE datetime null, LAST_IN_NO numeric(8,0) null, LAST_OUT_DATE datetime null, LAST_OUT_NO numeric(8,0) null)   
+GO
+ COMMIT
+ GO 
+
+alter table STKS_MASTER add constraint pk_stks_mast primary key nonclustered (FACT_ID, STR_ID, ITM_ID)   
+GO
+ COMMIT
+ GO 
+---------------------------------------------
+create table STKS_MASTER_HISTORY (FACT_ID numeric(2,0) not null, STR_ID char(12) not null, ITM_ID char(9) not null, F_BAL_QTY numeric(13,2) null, F_BAL_VAL numeric(13,2) null, SUP_QTY numeric(13,2) null, SUP_VAL numeric(13,2) null, ISSUED_QTY numeric(13,2) null, ISSUED_VAL numeric(13,2) null, RED_SUP_QTY numeric(13,2) null, RED_SUP_VAL numeric(13,2) null, RED_ISSUED_QTY numeric(13,2) null, RED_ISSUED_VAL numeric(13,2) null, AVG_COST numeric(15,2) null, NET_QTY numeric(13,2) null, NET_VAL numeric(13,2) null, TIME_STAMP datetime null, USER_STAMP numeric(3,0) null, PC_STAMP varchar(25) null, ITM_MIN numeric(13,2) null, ITM_EDG numeric(13,2) null)   
+GO
+ COMMIT
+ GO 
+

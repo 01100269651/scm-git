@@ -1,0 +1,3 @@
+if exists (select 1 from  sysobjects where  name = 'proc_last_seson_convert_03' and    type = 'P')
+	drop proc proc_last_seson_convert_03
+go     

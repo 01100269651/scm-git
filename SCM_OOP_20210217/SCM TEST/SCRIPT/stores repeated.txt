@@ -1,0 +1,25 @@
+  SELECT master.factor_no,   
+
+         master.store_no, stores.store_nm,  
+
+         master.item_no,  items.item_nm ,
+
+         master.fin_qty,   
+
+         master.net_qty,   
+
+         master.net_val  ,count(*)
+
+    FROM master,   
+
+         stores_save ,stores,items  
+
+   WHERE ( master.store_no = stores_save.store_no )   
+
+  and ( stores_save.kind_code = 1 ) And  
+
+         ( master.factor_no = '50' ) and   master.store_no=stores.store_no and master.item_no =items.item_no
+
+group by   master.item_no having ( master.store_no = stores_save.store_no ) and  count(*) >1  and ( stores_save.kind_code = 1 ) And  
+
+         ( master.factor_no = '50' ) and   master.store_no=stores.store_no and master.item_no =items.item_no   ;

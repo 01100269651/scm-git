@@ -1,0 +1,489 @@
+IF EXISTS (SELECT 1 FROM sysobjects o, sysusers u WHERE o.uid=u.uid AND o.name = 'CITY ' AND u.name = 'dbo' AND o.type = 'U')
+	drop table CITY 
+GO
+COMMIT
+GO
+-------------------------------------------
+IF EXISTS (SELECT 1 FROM sysobjects o, sysusers u WHERE o.uid=u.uid AND o.name = 'COMPANY ' AND u.name = 'dbo' AND o.type = 'U')
+	drop table COMPANY 
+GO
+COMMIT
+GO
+------------------------------------------------
+IF EXISTS (SELECT 1 FROM sysobjects o, sysusers u WHERE o.uid=u.uid AND o.name = 'COUNTRY ' AND u.name = 'dbo' AND o.type = 'U')
+	drop table COUNTRY
+GO
+COMMIT
+GO
+------------------------------------------------
+IF EXISTS (SELECT 1 FROM sysobjects o, sysusers u WHERE o.uid=u.uid AND o.name = 'DM_DRAWING' AND u.name = 'dbo' AND o.type = 'U')
+	drop table DM_DRAWING
+GO
+COMMIT
+GO
+------------------------------------------------
+IF EXISTS (SELECT 1 FROM sysobjects o, sysusers u WHERE o.uid=u.uid AND o.name = 'DM_ITEMS_DETAILS' AND u.name = 'dbo' AND o.type = 'U')
+	drop table DM_ITEMS_DETAILS 
+GO
+COMMIT
+GO
+------------------------------------------------
+------------------------------------------------
+IF EXISTS (SELECT 1 FROM sysobjects o, sysusers u WHERE o.uid=u.uid AND o.name = 'DM_ORDER_CALC' AND u.name = 'dbo' AND o.type = 'U')
+	drop table DM_ORDER_CALC
+GO
+COMMIT
+GO
+------------------------------------------------
+------------------------------------------------
+IF EXISTS (SELECT 1 FROM sysobjects o, sysusers u WHERE o.uid=u.uid AND o.name = 'DM_ORDER_FINAL' AND u.name = 'dbo' AND o.type = 'U')
+	drop table DM_ORDER_FINAL 
+GO
+COMMIT
+GO
+------------------------------------------------
+IF EXISTS (SELECT 1 FROM sysobjects o, sysusers u WHERE o.uid=u.uid AND o.name ='DM_ORDER_FINAL_H ' AND u.name = 'dbo' AND o.type = 'U')
+	drop table DM_ORDER_FINAL_H 
+GO
+COMMIT
+GO
+------------------------------------------------
+IF EXISTS (SELECT 1 FROM sysobjects o, sysusers u WHERE o.uid=u.uid AND o.name = 'DM_ORDER_IC ' AND u.name = 'dbo' AND o.type = 'U')
+	drop table DM_ORDER_IC 
+GO
+COMMIT
+GO
+------------------------------------------------
+IF EXISTS (SELECT 1 FROM sysobjects o, sysusers u WHERE o.uid=u.uid AND o.name = 'DM_ORDER_ITEMS_IC' AND u.name = 'dbo' AND o.type = 'U')
+	drop table DM_ORDER_ITEMS_IC
+GO
+COMMIT
+GO
+------------------------------------------------
+------------------------------------------------
+IF EXISTS (SELECT 1 FROM sysobjects o, sysusers u WHERE o.uid=u.uid AND o.name ='DM_ORDER_STATES' AND u.name = 'dbo' AND o.type = 'U')
+	drop table DM_ORDER_STATES 
+GO
+COMMIT
+GO
+------------------------------------------------DM_ORDER_TYPE 
+IF EXISTS (SELECT 1 FROM sysobjects o, sysusers u WHERE o.uid=u.uid AND o.name ='DM_ORDER_TYPE' AND u.name = 'dbo' AND o.type = 'U')
+	drop table DM_ORDER_TYPE 
+GO
+COMMIT
+GO
+---------------------------------------------DM_PROOF_RECEIPT 
+IF EXISTS (SELECT 1 FROM sysobjects o, sysusers u WHERE o.uid=u.uid AND o.name ='DM_PROOF_RECEIPT' AND u.name = 'dbo' AND o.type = 'U')
+	drop table DM_PROOF_RECEIPT 
+GO
+COMMIT
+GO
+
+----------------------------------------DM_SER_PROFILE 
+IF EXISTS (SELECT 1 FROM sysobjects o, sysusers u WHERE o.uid=u.uid AND o.name = 'DM_SER_PROFILE' AND u.name = 'dbo' AND o.type = 'U')
+	drop table DM_SER_PROFILE 
+GO
+COMMIT
+GO
+--------------------------------------
+IF EXISTS (SELECT 1 FROM sysobjects o, sysusers u WHERE o.uid=u.uid AND o.name = 'DM_SETTING' AND u.name = 'dbo' AND o.type = 'U')
+	drop table DM_SETTING 
+GO
+COMMIT
+GO
+-------------------------------------
+IF EXISTS (SELECT 1 FROM sysobjects o, sysusers u WHERE o.uid=u.uid AND o.name = 'DM_STATE_TYPES' AND u.name = 'dbo' AND o.type = 'U')
+	drop table DM_STATE_TYPES 
+GO
+COMMIT
+GO
+-------------------------------------
+IF EXISTS (SELECT 1 FROM sysobjects o, sysusers u WHERE o.uid=u.uid AND o.name = 'ITEMS_DETAILS' AND u.name = 'dbo' AND o.type = 'U')
+	drop table ITEMS_DETAILS 
+GO
+COMMIT
+GO
+-------------------------------------
+
+
+IF EXISTS (SELECT 1 FROM sysobjects o, sysusers u WHERE o.uid=u.uid AND o.name = 'MM_ALTERNATIVES' AND u.name = 'dbo' AND o.type = 'U')
+	drop table MM_ALTERNATIVES 
+GO
+COMMIT
+GO
+-------------------------------------
+
+IF EXISTS (SELECT 1 FROM sysobjects o, sysusers u WHERE o.uid=u.uid AND o.name ='MM_DEPT_CONS' AND u.name = 'dbo' AND o.type = 'U')
+	drop table MM_DEPT_CONS 
+GO
+COMMIT
+GO
+-------------------------------------
+
+IF EXISTS (SELECT 1 FROM sysobjects o, sysusers u WHERE o.uid=u.uid AND o.name ='MM_DEPT_CONS' AND u.name = 'dbo' AND o.type = 'U')
+	drop table MM_DEPT_CONS 
+GO
+COMMIT
+GO
+-------------------------------------MM_DEPT_GROUPS 
+-------------------------------------
+
+IF EXISTS (SELECT 1 FROM sysobjects o, sysusers u WHERE o.uid=u.uid AND o.name = 'MM_DEPT_CONS' AND u.name = 'dbo' AND o.type = 'U')
+	drop table MM_DEPT_GROUPS 
+GO
+COMMIT
+GO
+-------------------------------------
+
+IF EXISTS (SELECT 1 FROM sysobjects o, sysusers u WHERE o.uid=u.uid AND o.name = 'MM_DEPT_ITMS' AND u.name = 'dbo' AND o.type = 'U')
+	drop table MM_DEPT_ITMS 
+GO
+COMMIT
+GO
+
+-------------------------------------
+
+IF EXISTS (SELECT 1 FROM sysobjects o, sysusers u WHERE o.uid=u.uid AND o.name = 'MM_MC_DEPT_QTY' AND u.name = 'dbo' AND o.type = 'U')
+	drop table MM_MC_DEPT_QTY
+GO
+COMMIT
+GO
+
+
+-------------------------------------
+
+IF EXISTS (SELECT 1 FROM sysobjects o, sysusers u WHERE o.uid=u.uid AND o.name = 'PM_ORDER' AND u.name = 'dbo' AND o.type = 'U')
+	drop table PM_ORDER 
+GO
+COMMIT
+GO
+
+---------------------------------------------
+
+IF EXISTS (SELECT 1 FROM sysobjects o, sysusers u WHERE o.uid=u.uid AND o.name ='PM_ORDER_ITEMS' AND u.name = 'dbo' AND o.type = 'U')
+	drop table PM_ORDER_ITEMS
+GO
+COMMIT
+GO
+
+---------------------------------------------
+
+IF EXISTS (SELECT 1 FROM sysobjects o, sysusers u WHERE o.uid=u.uid AND o.name ='PM_ORDER_ITEMS_CALC'  AND u.name = 'dbo' AND o.type = 'U')
+	drop table PM_ORDER_ITEMS_CALC
+GO
+COMMIT
+GO
+
+---------------------------------------------
+IF EXISTS (SELECT 1 FROM sysobjects o, sysusers u WHERE o.uid=u.uid AND o.name ='PM_ORDER_ITEMS_OFFERS' AND u.name = 'dbo' AND o.type = 'U')
+	drop table PM_ORDER_ITEMS_OFFERS 
+GO
+COMMIT
+GO
+
+---------------------------------------------
+IF EXISTS (SELECT 1 FROM sysobjects o, sysusers u WHERE o.uid=u.uid AND o.name ='PM_ORDER_ITEMS_OFFERS_2' AND u.name = 'dbo' AND o.type = 'U')
+	drop table PM_ORDER_ITEMS_OFFERS_2 
+GO
+COMMIT
+GO
+
+---------------------------------------------
+IF EXISTS (SELECT 1 FROM sysobjects o, sysusers u WHERE o.uid=u.uid AND o.name ='PRCH_OFFERS' AND u.name = 'dbo' AND o.type = 'U')
+	drop table PRCH_OFFERS 
+GO
+COMMIT
+GO
+
+---------------------------------------------
+IF EXISTS (SELECT 1 FROM sysobjects o, sysusers u WHERE o.uid=u.uid AND o.name ='SCM__ACCOUNT_CENTER_C'  AND u.name = 'dbo' AND o.type = 'U')
+	drop table SCM__ACCOUNT_CENTER_C 
+GO
+COMMIT
+GO
+
+---------------------------------------------
+IF EXISTS (SELECT 1 FROM sysobjects o, sysusers u WHERE o.uid=u.uid AND o.name = 'SCM_ACTIONS' AND u.name = 'dbo' AND o.type = 'U')
+	drop table SCM_ACTIONS 
+GO
+COMMIT
+GO
+
+---------------------------------------------
+IF EXISTS (SELECT 1 FROM sysobjects o, sysusers u WHERE o.uid=u.uid AND o.name = 'SCM_ACTIONS_H' AND u.name = 'dbo' AND o.type = 'U')
+	drop table SCM_ACTIONS_H 
+GO
+COMMIT
+GO
+
+---------------------------------------------
+IF EXISTS (SELECT 1 FROM sysobjects o, sysusers u WHERE o.uid=u.uid AND o.name = 'SCM_COMPLAINT' AND u.name = 'dbo' AND o.type = 'U')
+	drop table SCM_COMPLAINT 
+GO
+COMMIT
+GO
+
+---------------------------------------------
+IF EXISTS (SELECT 1 FROM sysobjects o, sysusers u WHERE o.uid=u.uid AND o.name = 'SCM_CURRENCY' AND u.name = 'dbo' AND o.type = 'U')
+	drop table SCM_CURRENCY 
+GO
+COMMIT
+GO
+
+---------------------------------------------SCM_DEPT_MASTER 
+---------------------------------------------
+IF EXISTS (SELECT 1 FROM sysobjects o, sysusers u WHERE o.uid=u.uid AND o.name = 'SCM_DEPT_MASTER' AND u.name = 'dbo' AND o.type = 'U')
+	drop table SCM_DEPT_MASTER 
+GO
+COMMIT
+GO
+---------------------------------------------
+IF EXISTS (SELECT 1 FROM sysobjects o, sysusers u WHERE o.uid=u.uid AND o.name = 'SCM_DEPTS_COST_C' AND u.name = 'dbo' AND o.type = 'U')
+	drop table SCM_DEPTS_COST_C 
+GO
+COMMIT
+GO
+
+-----------------------------------
+IF EXISTS (SELECT 1 FROM sysobjects o, sysusers u WHERE o.uid=u.uid AND o.name = 'SCM_EMPLOYEE' AND u.name = 'dbo' AND o.type = 'U')
+	drop table SCM_EMPLOYEE 
+GO
+COMMIT
+GO
+
+-----------------------------------SCM_FACT 
+IF EXISTS (SELECT 1 FROM sysobjects o, sysusers u WHERE o.uid=u.uid AND o.name = 'SCM_FACT' AND u.name = 'dbo' AND o.type = 'U')
+	drop table SCM_FACT 
+GO
+COMMIT
+GO
+
+-----------------------------------
+IF EXISTS (SELECT 1 FROM sysobjects o, sysusers u WHERE o.uid=u.uid AND o.name ='SCM_FACT_DEPT'  AND u.name = 'dbo' AND o.type = 'U')
+	drop table SCM_FACT_DEPT 
+GO
+COMMIT
+GO
+-----------------------------------
+IF EXISTS (SELECT 1 FROM sysobjects o, sysusers u WHERE o.uid=u.uid AND o.name ='SCM_FACTS_BALANCE' AND u.name = 'dbo' AND o.type = 'U')
+	drop table SCM_FACTS_BALANCE 
+GO
+COMMIT
+GO
+-----------------------------------
+IF EXISTS (SELECT 1 FROM sysobjects o, sysusers u WHERE o.uid=u.uid AND o.name ='SCM_IMPORTER' AND u.name = 'dbo' AND o.type = 'U')
+	drop table SCM_IMPORTER 
+GO
+COMMIT
+GO
+----------------------------SCM_INCOMING_NOTES 
+-----------------------------------
+IF EXISTS (SELECT 1 FROM sysobjects o, sysusers u WHERE o.uid=u.uid AND o.name ='SCM_INCOMING_NOTES' AND u.name = 'dbo' AND o.type = 'U')
+	drop table SCM_INCOMING_NOTES 
+GO
+COMMIT
+GO
+
+-----------------------------------
+IF EXISTS (SELECT 1 FROM sysobjects o, sysusers u WHERE o.uid=u.uid AND o.name ='SCM_ITEMS_MASTER'  AND u.name = 'dbo' AND o.type = 'U')
+	drop table SCM_ITEMS_MASTER 
+GO
+COMMIT
+GO
+
+----------------------------SCM_MAIN_DEPT 
+IF EXISTS (SELECT 1 FROM sysobjects o, sysusers u WHERE o.uid=u.uid AND o.name ='SCM_MAIN_DEPT' AND u.name = 'dbo' AND o.type = 'U')
+	drop table SCM_MAIN_DEPT 
+GO
+COMMIT
+GO
+----------------------SCM_MCHN_CARS 
+IF EXISTS (SELECT 1 FROM sysobjects o, sysusers u WHERE o.uid=u.uid AND o.name ='SCM_MCHN_CARS' AND u.name = 'dbo' AND o.type = 'U')
+	drop table SCM_MCHN_CARS 
+GO
+COMMIT
+GO
+--------------------------------SCM_MESSAGE_CODE 
+IF EXISTS (SELECT 1 FROM sysobjects o, sysusers u WHERE o.uid=u.uid AND o.name ='SCM_MESSAGE_CODE' AND u.name = 'dbo' AND o.type = 'U')
+	drop table SCM_MESSAGE_CODE 
+GO
+COMMIT
+GO
+
+-------------------------------------------SCM_MOWAZNA 
+IF EXISTS (SELECT 1 FROM sysobjects o, sysusers u WHERE o.uid=u.uid AND o.name ='SCM_MOWAZNA' AND u.name = 'dbo' AND o.type = 'U')
+	drop table SCM_MOWAZNA 
+GO
+COMMIT
+GO
+-----------------------------------------SCM_MOWZNA_ITEMS 
+
+IF EXISTS (SELECT 1 FROM sysobjects o, sysusers u WHERE o.uid=u.uid AND o.name = 'SCM_MOWZNA_ITEMS' AND u.name = 'dbo' AND o.type = 'U')
+	drop table SCM_MOWZNA_ITEMS 
+GO
+COMMIT
+GO
+-----------------------------------------------------SCM_OFFERS 
+IF EXISTS (SELECT 1 FROM sysobjects o, sysusers u WHERE o.uid=u.uid AND o.name = 'SCM_OFFERS' AND u.name = 'dbo' AND o.type = 'U')
+	drop table SCM_OFFERS 
+GO
+COMMIT
+GO
+
+-----------------------------------------------------------------------------
+IF EXISTS (SELECT 1 FROM sysobjects o, sysusers u WHERE o.uid=u.uid AND o.name = 'SCM_PM_SO' AND u.name = 'dbo' AND o.type = 'U')
+	drop table SCM_PM_SO 
+GO
+COMMIT
+GO
+
+-----------------------------------------------------------------------------
+IF EXISTS (SELECT 1 FROM sysobjects o, sysusers u WHERE o.uid=u.uid AND o.name = 'SCM_PROJECTS' AND  u.name = 'dbo' AND o.type = 'U')
+	drop table SCM_PROJECTS 
+GO
+COMMIT
+GO
+
+----------------------------------------------------------------------------------SCM_RJCT_CODES 
+-----------------------------------------------------------------------------
+IF EXISTS (SELECT 1 FROM sysobjects o, sysusers u WHERE o.uid=u.uid AND o.name = 'SCM_RJCT_CODES' AND  u.name = 'dbo' AND o.type = 'U')
+	drop table SCM_RJCT_CODES 
+GO
+COMMIT
+GO
+-----------------------------------------------------------------------------
+IF EXISTS (SELECT 1 FROM sysobjects o, sysusers u WHERE o.uid=u.uid AND o.name = 'SCM_SAVE_FILES' AND  u.name = 'dbo' AND o.type = 'U')
+	drop table SCM_SAVE_FILES 
+GO
+COMMIT
+GO
+-----------------------------------------------------------------------------
+IF EXISTS (SELECT 1 FROM sysobjects o, sysusers u WHERE o.uid=u.uid AND o.name = 'SCM_SECURITY_ITMS' AND  u.name = 'dbo' AND o.type = 'U')
+	drop table SCM_SECURITY_ITMS 
+GO
+COMMIT
+GO
+
+---------------------------------
+IF EXISTS (SELECT 1 FROM sysobjects o, sysusers u WHERE o.uid=u.uid AND o.name ='SCM_SENDING_DEPTS' AND  u.name = 'dbo' AND o.type = 'U')
+	drop table SCM_SENDING_DEPTS 
+GO
+COMMIT
+GO
+
+
+
+---------------------------------
+IF EXISTS (SELECT 1 FROM sysobjects o, sysusers u WHERE o.uid=u.uid AND o.name ='SCM_SO_TERMS' AND  u.name = 'dbo' AND o.type = 'U')
+	drop table SCM_SO_TERMS
+GO
+COMMIT
+GO
+
+---------------------------------
+IF EXISTS (SELECT 1 FROM sysobjects o, sysusers u WHERE o.uid=u.uid AND o.name ='SCM_SUPPLIERS' AND  u.name = 'dbo' AND o.type = 'U')
+	drop table SCM_SUPPLIERS 
+GO
+COMMIT
+GO
+---------------------------------
+IF EXISTS (SELECT 1 FROM sysobjects o, sysusers u WHERE o.uid=u.uid AND o.name ='SCM_SYSTEM_TABLE' AND  u.name = 'dbo' AND o.type = 'U')
+	drop table SCM_SYSTEM_TABLE 
+GO
+COMMIT
+GO
+---------------------------------
+IF EXISTS (SELECT 1 FROM sysobjects o, sysusers u WHERE o.uid=u.uid AND o.name ='SCM_TERMS' AND  u.name = 'dbo' AND o.type = 'U')
+	drop table SCM_TERMS 
+GO
+COMMIT
+GO
+---------------------------------------
+IF EXISTS (SELECT 1 FROM sysobjects o, sysusers u WHERE o.uid=u.uid AND o.name ='SCM_TRANSACTIONS_CODES' AND  u.name = 'dbo' AND o.type = 'U')
+	drop table SCM_TRANSACTIONS_CODES 
+GO
+COMMIT
+GO
+---------------------------------------
+---------------------------------------
+IF EXISTS (SELECT 1 FROM sysobjects o, sysusers u WHERE o.uid=u.uid AND o.name ='SCM_USERS' AND  u.name = 'dbo' AND o.type = 'U')
+	drop table SCM_USERS
+GO
+COMMIT
+GO
+-------------------------------------SOM_DM_IC
+IF EXISTS (SELECT 1 FROM sysobjects o, sysusers u WHERE o.uid=u.uid AND o.name ='SOM_DM_IC' AND  u.name = 'dbo' AND o.type = 'U')
+	drop table SOM_DM_IC
+GO
+COMMIT
+GO
+--------------------------------------SOM_IC 
+IF EXISTS (SELECT 1 FROM sysobjects o, sysusers u WHERE o.uid=u.uid AND o.name ='SOM_IC' AND  u.name = 'dbo' AND o.type = 'U')
+	drop table SOM_IC 
+GO
+COMMIT
+GO
+-------------------------------------------------------SOM_ITEMS_IC 
+IF EXISTS (SELECT 1 FROM sysobjects o, sysusers u WHERE o.uid=u.uid AND o.name ='SOM_ITEMS_IC' AND  u.name = 'dbo' AND o.type = 'U')
+	drop table SOM_ITEMS_IC 
+GO
+COMMIT
+GO
+-------------------------------------------------------SOM_STATE_TYPES 
+IF EXISTS (SELECT 1 FROM sysobjects o, sysusers u WHERE o.uid=u.uid AND o.name ='SOM_STATE_TYPES' AND  u.name = 'dbo' AND o.type = 'U')
+	drop table SOM_STATE_TYPES 
+GO
+COMMIT
+GO
+
+-------------------------------------------------------SOM_STATES 
+IF EXISTS (SELECT 1 FROM sysobjects o, sysusers u WHERE o.uid=u.uid AND o.name ='SOM_STATES' AND  u.name = 'dbo' AND o.type = 'U')
+	drop table SOM_STATES 
+GO
+COMMIT
+GO
+----------------------------SOM_TYPES 
+IF EXISTS (SELECT 1 FROM sysobjects o, sysusers u WHERE o.uid=u.uid AND o.name = 'SOM_TYPES' AND  u.name = 'dbo' AND o.type = 'U')
+	drop table SOM_TYPES 
+GO
+COMMIT
+GO
+
+----------------------------STKS_ITM 
+IF EXISTS (SELECT 1 FROM sysobjects o, sysusers u WHERE o.uid=u.uid AND o.name = 'STKS_ITM' AND  u.name = 'dbo' AND o.type = 'U')
+	drop table STKS_ITM 
+GO
+COMMIT
+GO
+
+
+----------------------------
+IF EXISTS (SELECT 1 FROM sysobjects o, sysusers u WHERE o.uid=u.uid AND o.name = 'STKS_ITM_HISTORY' AND  u.name = 'dbo' AND o.type = 'U')
+	drop table STKS_ITM_HISTORY 
+GO
+COMMIT
+GO
+
+
+-----------------------------------------------------STKS_ITM_TRAN 
+IF EXISTS (SELECT 1 FROM sysobjects o, sysusers u WHERE o.uid=u.uid AND o.name = 'STKS_ITM_TRAN' AND  u.name = 'dbo' AND o.type = 'U')
+	drop table STKS_ITM_TRAN 
+GO
+COMMIT
+GO
+
+-----------------------------------------------------
+IF EXISTS (SELECT 1 FROM sysobjects o, sysusers u WHERE o.uid=u.uid AND o.name = 'STKS_MASTER' AND  u.name = 'dbo' AND o.type = 'U')
+	drop table STKS_MASTER 
+GO
+COMMIT
+GO
+-----------------------------------------------------------------
+IF EXISTS (SELECT 1 FROM sysobjects o, sysusers u WHERE o.uid=u.uid AND o.name = 'STKS_MASTER_HISTORY' AND  u.name = 'dbo' AND o.type = 'U')
+	drop table STKS_MASTER_HISTORY 
+GO
+COMMIT
+GO
+-----------------------------------------------------------------
+
+

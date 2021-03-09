@@ -1,0 +1,5 @@
+50	w_company_code	2			
+50	w_country_code	1			
+50	w_fact_dept	3			
+50	w_ic_fact	99			
+50	w_incoming_notes_t	6			

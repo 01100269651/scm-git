@@ -1,0 +1,1 @@
+select "bcp shop_dbase.."+ name + " out  C:\shop\source\bcp\" + name + ".txt   -Usa -P -Squsfactory -c" from sysobjects where type = "U" order by name
